@@ -1,6 +1,9 @@
 import React from "react";
 import Layout from "./Layout";
 
+import { Card, CardContent } from "@/components/ui/card";
+import { Star, MessageCircle, Heart, MoreVertical } from "lucide-react";
+
 function Dashboard() {
   const cards = [
     { title: "Sells Graph", value: "$8,451", change: "3.2%", up: true },
@@ -50,6 +53,42 @@ function Dashboard() {
     { id: 6, name: 'Chicken Sandwich', customer: 'Peter Gill', location: 'Street 21', status: 'Pending', deliveredTime: '12:05', price: '$15' },
   ];
 
+  const restaurants = [
+    {
+      name: "Hunger House",
+      time: "30 seconds ago",
+      rating: 4,
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nunc velit, dictum eget nulla.",
+      image: "/pizza.png",
+      likes: 982,
+      comments: 785,
+      profilePic: "/profile1.png",
+    },
+    {
+      name: "Food Lounge",
+      time: "30 seconds ago",
+      rating: 3,
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nunc velit, dictum eget nulla.",
+      image: "/pancakes.png",
+      likes: 982,
+      comments: 785,
+      profilePic: "/profile2.png",
+    },
+    {
+      name: "Delizious",
+      time: "30 seconds ago",
+      rating: 4,
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nunc velit, dictum eget nulla.",
+      image: "/pasta.png",
+      likes: 982,
+      comments: 785,
+      profilePic: "/profile3.png",
+    },
+  ];
+  
   return (
     <>
       <Layout>
@@ -257,7 +296,56 @@ function Dashboard() {
         </table>
       </div>
     </div>
-
+    <div className="p-6">
+      <h2 className="text-lg font-bold mb-4">NEW RESTAURANT LISTINGS</h2>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        {restaurants.map((restaurant, index) => (
+          <Card key={index} className="rounded-xl shadow-md">
+            <CardContent className="p-4">
+              <div className="flex items-center justify-between mb-2">
+                <div className="flex items-center">
+                  <img
+                    src={restaurant.profilePic}
+                    alt={restaurant.name}
+                    className="w-8 h-8 rounded-full mr-2"
+                  />
+                  <div>
+                    <h3 className="font-semibold">{restaurant.name}</h3>
+                    <p className="text-xs text-gray-500">{restaurant.time}</p>
+                  </div>
+                </div>
+                <MoreVertical className="text-gray-400 cursor-pointer" />
+              </div>
+              <div className="flex mb-2">
+                {[...Array(5)].map((_, i) => (
+                  <Star
+                    key={i}
+                    className={`h-4 w-4 ${
+                      i < restaurant.rating ? "text-yellow-500" : "text-gray-300"
+                    }`}
+                  />
+                ))}
+              </div>
+              <p className="text-sm text-gray-600 mb-2">{restaurant.description}</p>
+              <img
+                src={restaurant.image}
+                alt={restaurant.name}
+                className="w-full h-32 object-cover rounded-lg mb-2"
+              />
+              <div className="flex justify-between text-gray-500 text-sm">
+                <div className="flex items-center">
+                  <Heart className="w-4 h-4 mr-1" /> {restaurant.likes}
+                </div>
+                <div className="flex items-center">
+                  <MessageCircle className="w-4 h-4 mr-1" /> {restaurant.comments}
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        ))}
+      </div>
+    </div>
+  
         </div>
       </Layout>
     </>
