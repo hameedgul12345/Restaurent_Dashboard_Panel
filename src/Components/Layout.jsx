@@ -18,6 +18,19 @@ function Layout({ children }) {
     setLeftMargin('20%')
     setMenu(!menu)
    }
+   const links=[
+    {
+      link:'/dashboard',
+      title:'Dashboard',
+      icon: <i className="ri-dashboard-fill"></i> 
+    },
+    {
+      link:'/menu',
+      title:'Menu',
+      icon: <i className="ri-archive-fill"></i>
+    },
+   
+   ]
   return (
     <>
       <div className="w-full">
@@ -41,11 +54,16 @@ function Layout({ children }) {
               />
             </div>
             <div>
-              <Link to={"/dashboard"}>
+             {
+              links.map((route,index)=>(
+                <Link to={route.link}>
                 <div className="flex flex-row gap-2 bg-slate-500 p-2 ">
-                  <i className="ri-dashboard-fill"></i> <h3>Dashboard</h3>
+                  {route.icon} <h3>{route.title}</h3>
                 </div>
               </Link>
+              ))
+             }
+              
             </div>
           </div>
         </aside>
