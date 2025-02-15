@@ -1,23 +1,32 @@
 import React, { useState } from "react";
-import { Link, Outlet } from "react-router-dom";
+import { Link, Outlet, useLocation } from "react-router-dom";
 import "animate.css";
 function Layout({ children }) {
   const [dropDownButton, setDropDownButton] = useState(false);
-  const [width,setWidth]=useState('75%')
-  const[leftMargin,setLeftMargin]=useState('20%')
-  const [menu,setMenu]=useState(true)
+  const [width, setWidth] = useState("75%");
+  const [leftMargin, setLeftMargin] = useState("20%");
+  const [menu, setMenu] = useState(true);
+  const location = useLocation();
+  console.log(location.pathname);
+  const setUIFull = () => {
+    setWidth("95%");
+    setLeftMargin("0%");
+    setMenu(!menu);
+  };
 
-  const setUIFull=()=>{
-   setWidth('95%')
-   setLeftMargin('0%')
-   setMenu(!menu)
-  }
+  const setUIHalf = () => {
+    setWidth("75%");
+    setLeftMargin("20%");
+    setMenu(!menu);
+  };
+  const links = [
+    {
+      link: "/dashboard",
+      title: "Dashboard",
+      icon: <i className="ri-dashboard-fill"></i>,
+    },
   
-  const setUIHalf=()=>{
-    setWidth('75%')
-    setLeftMargin('20%')
-    setMenu(!menu)
-   }
+  ];
   return (
     <>
       <div className="w-full">
@@ -29,7 +38,7 @@ function Layout({ children }) {
             top: "0%",
             left: "0%",
             overflow: "hidden",
-            transition:'0.75s ease'
+            transition: "0.75s ease",
           }}
         >
           <div className="flex flex-col justify-center">
@@ -41,19 +50,37 @@ function Layout({ children }) {
               />
             </div>
             <div>
-              <Link to={"/dashboard"}>
-                <div className="flex flex-row gap-2 bg-slate-500 p-2 ">
-                  <i className="ri-dashboard-fill"></i> <h3>Dashboard</h3>
-                </div>
-              </Link>
+              {links.map((route, index) => (
+                <Link key={index} to={route.link}>
+                  <div
+                    className={`flex flex-row gap-2 ${
+                      location === route.link
+                        ? "bg-red-500 text-white"
+                        : "bg-white text-black"
+                    } p-2 `}
+                  >
+                    {route.icon} <h3>{route.title}</h3>
+                  </div>
+                </Link>
+              ))}
             </div>
           </div>
         </aside>
-        <section style={{ width: width, marginLeft: leftMargin,transition:'0.75s ease' }}>
+        <section
+          style={{
+            width: width,
+            marginLeft: leftMargin,
+            transition: "0.75s ease",
+          }}
+        >
           <div className="flex items-center justify-between p-4 bg-white shadow-md">
             {/* Left Section */}
             <div className="flex items-center space-x-2">
-           {menu?<i className="ri-menu-line" onClick={setUIFull}></i>:<i className="ri-menu-2-line" onClick={setUIHalf}></i>}
+              {menu ? (
+                <i className="ri-menu-line" onClick={setUIFull}></i>
+              ) : (
+                <i className="ri-menu-2-line" onClick={setUIHalf}></i>
+              )}
               {/* Icon Placeholder */}
             </div>
 
@@ -84,27 +111,37 @@ function Layout({ children }) {
         <aside
           style={{
             width: "5%",
-            display:"flex",
-            flexDirection:'column',
-            alignItems:'center',
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
             minHeight: "100vh",
             position: "fixed",
             top: "0%",
             right: "0%",
             overflow: "hidden",
-            border:'1px solid #EBEBEB',
-            gap:'30px'
+            border: "1px solid #EBEBEB",
+            gap: "30px",
           }}
-          className="p-4"      
+          className="p-4"
         >
-        <i className="ri-todo-line  text-gray-500  text-xl"></i>
-        <i class="ri-notification-3-line  text-gray-500  text-xl"></i>
-        <i class="ri-pencil-line  text-gray-500  text-xl"></i>
-        <i class="ri-share-line  text-gray-500  text-xl"></i>
-        <i class="ri-settings-2-line text-gray-500  text-xl"></i>
+          <i className="ri-todo-line  text-gray-500  text-xl"></i>
+          <i class="ri-notification-3-line  text-gray-500  text-xl"></i>
+          <i class="ri-pencil-line  text-gray-500  text-xl"></i>
+          <i class="ri-share-line  text-gray-500  text-xl"></i>
+          <i class="ri-settings-2-line text-gray-500  text-xl"></i>
         </aside>
       </div>
-      <div style={{ marginLeft: leftMargin,transition:'0.75s ease' ,width:width}} className="p-4"> {children}</div>
+      <div
+        style={{
+          marginLeft: leftMargin,
+          transition: "0.75s ease",
+          width: width,
+        }}
+        className="p-4"
+      >
+        {" "}
+        {children}
+      </div>
       {/* <Outlet /> Renders child routes dynamically */}
     </>
   );
