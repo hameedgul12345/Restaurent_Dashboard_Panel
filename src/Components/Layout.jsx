@@ -25,6 +25,11 @@ function Layout({ children }) {
       title: "Dashboard",
       icon: <i className="ri-dashboard-fill"></i>,
     },
+    {
+      link: "/order",
+      title: "Order",
+      icon: <i class="ri-list-view"></i>
+    },
   
   ];
   return (
