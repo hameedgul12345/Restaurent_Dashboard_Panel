@@ -26,10 +26,11 @@ function Layout({ children }) {
       icon: <i className="ri-dashboard-fill"></i>,
     },
     {
-      link: "/order",
-      title: "Order",
-      icon: <i class="ri-list-view"></i>
+      link: "/restuarent_list",
+      title: "Restuarent List",
+      icon: <i class="ri-list-ordered-2"></i>
     },
+   
   
   ];
   return (
