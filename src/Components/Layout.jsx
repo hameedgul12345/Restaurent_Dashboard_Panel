@@ -26,9 +26,9 @@ function Layout({ children }) {
       icon: <i className="ri-dashboard-fill"></i>,
     },
     {
-      link: "/order",
-      title: "Order",
-      icon: <i class="ri-list-view"></i>
+      link: "/invoice",
+      title: "Invoice",
+      icon: <i class="ri-slideshow-fill"></i>
     },
   
   ];
@@ -141,6 +141,7 @@ function Layout({ children }) {
           marginLeft: leftMargin,
           transition: "0.75s ease",
           width: width,
+          background:'#F0F0FA'
         }}
         className="p-4"
       >
