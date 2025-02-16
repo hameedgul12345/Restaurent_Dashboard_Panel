@@ -25,6 +25,24 @@ function Layout({ children }) {
       title: "Dashboard",
       icon: <i className="ri-dashboard-fill"></i>,
     },
+ 
+    {
+      link: "/menu",
+      title: "Menu",
+      icon: <i class="ri-slideshow-fill"></i>
+    },
+    {
+      link: "/order",
+      title: "Order",
+      icon: <i class="ri-slideshow-fill"></i>
+    },
+    {
+      link: "/restuarent_list",
+      title: "Restuarent List",
+      icon: <i class="ri-slideshow-fill"></i>
+    },
+  
+
     {
       link: "/invoice",
       title: "Invoice",

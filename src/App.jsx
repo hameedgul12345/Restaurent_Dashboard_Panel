@@ -7,6 +7,9 @@ import {BrowserRouter,Routes,Route} from 'react-router-dom'
 import Home from './Components/Home'
 import Dashboard from './Components/Dashboard'
 import Invoice from './Components/Invoice'
+import Menu from './Components/Menu'
+import Order from './Components/Order'
+import Restuarent_List from './Components/Restuarent_List'
 function App() {
   
 
@@ -16,6 +19,10 @@ function App() {
     <Routes>
       <Route path='/' element={<Home/>}/>
       <Route path='/dashboard' element={<Dashboard/>}/>
+      <Route path='/menu' element={<Menu/>}/>
+      <Route path='/order' element={<Order/>}/>
+      <Route path='/restuarent_list' element={<Restuarent_List/>}/>
+      
       <Route path='/invoice' element={<Invoice/>}/>
       
     </Routes>
