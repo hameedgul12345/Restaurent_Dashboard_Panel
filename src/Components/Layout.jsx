@@ -26,6 +26,11 @@ function Layout({ children }) {
       icon: <i className="ri-dashboard-fill"></i>,
     },
     {
+      link: "/menu",
+      title: "Menu",
+      icon: <i class="ri-list-view"></i>
+    },
+    {
       link: "/order",
       title: "Order",
       icon: <i class="ri-list-view"></i>

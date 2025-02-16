@@ -7,6 +7,7 @@ import {BrowserRouter,Routes,Route} from 'react-router-dom'
 import Home from './Components/Home'
 import Dashboard from './Components/Dashboard'
 import Order from './Components/Order'
+import Menu from './Components/Menu'
 function App() {
   
 
@@ -17,6 +18,7 @@ function App() {
       <Route path='/' element={<Home/>}/>
       <Route path='/dashboard' element={<Dashboard/>}/>
       <Route path='/order' element={<Order/>}/>
+      <Route path='/menu' element={<Menu/>}/>
       
     </Routes>
     </BrowserRouter>
