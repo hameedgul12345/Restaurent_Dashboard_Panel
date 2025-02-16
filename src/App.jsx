@@ -11,6 +11,7 @@ import Menu from './Components/Menu'
 import Order from './Components/Order'
 import Restuarent_List from './Components/Restuarent_List'
 import Customers from './Components/Customers'
+import Logout from './Components/Logout'
 function App() {
   
 
@@ -25,6 +26,7 @@ function App() {
       <Route path='/restuarent_list' element={<Restuarent_List/>}/>
       <Route path='/invoice' element={<Invoice/>}/>
       <Route path='/customers' element={<Customers/>}/>
+      <Route path='/logout' element={<Logout/>}/>
       
       
     </Routes>
