@@ -55,139 +55,135 @@ function Dashboard() {
       <Layout>
         <div className="p-4 bg-gray-100 min-h-screen">
           <h1 className="text-2xl font-bold mb-2">Welcome, Anny</h1>
-          
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2">
-            {cards.map((card, index) => (
-              <div
-                key={index}
-                className="bg-white p-4 shadow-lg border flex flex-col relative"
-              >
-                <h2 className="text-md font-semibold text-gray-600">
-                  {card.title}
-                </h2>
-                <p className="text-2xl font-bold mt-2">{card.value}</p>
-                <div
-                  className={`absolute top-3 right-3 text-sm px-2 py-1 font-bold ${
-                    card.up ? "bg-black text-white" : "bg-red-200 text-red-600"
-                  }`}
-                >
-                  {card.up ? "↑" : "↓"} {card.change}
-                </div>
-                <div
-                  className={`mt-2 h-12 w-full ${
-                    card.up ? "bg-gray-300" : "bg-red-200"
-                  }`}
-                ></div>
-              </div>
-            ))}
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
-            <div className="bg-white p-4 shadow-lg border">
-              <div className="flex justify-between items-center mb-2">
-                <h2 className="text-lg font-bold">RECENT ORDERS REQUESTED</h2>
-                <button className="bg-red-500 text-white px-4 py-2">
-                  View All
-                </button>
-              </div>
-              <table className="w-full text-left">
-                <thead>
-                  <tr className="border-b">
-                    <th className="py-2">Food Item</th>
-                    <th className="py-2">Price</th>
-                    <th className="py-2">Product ID</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr className="border-b">
-                    <td className="py-2 flex items-center">
-                      <img
-                        src="/images/a.jpg"
-                        alt="Burger 1"
-                        className="w-6 h-6 mr-2 rounded-full"
-                      />
-                      Burger 1
-                    </td>
-                    <td className="py-2">$19.99</td>
-                    <td className="py-2">67384917</td>
-                  </tr>
-                  <tr className="border-b">
-                    <td className="py-2 flex items-center">
-                      <img
-                        src="/images/b.jpg"
-                        alt="Burger 2"
-                        className="w-6 h-6 mr-2 rounded-full"
-                      />
-                      Burger 2
-                    </td>
-                    <td className="py-2">$14.59</td>
-                    <td className="py-2">789393819</td>
-                  </tr>
-                  <tr className="border-b">
-                    <td className="py-2 flex items-center">
-                      <img
-                        src="/images/c.jpg"
-                        alt="Burger 3"
-                        className="w-6 h-6 mr-2 rounded-full"
-                      />
-                      Burger 3
-                    </td>
-                    <td className="py-2">$25.22</td>
-                    <td className="py-2">137893137</td>
-                  </tr>
-                  <tr>
-                    <td className="py-2 flex items-center">
-                      <img
-                        src="/images/d.png"
-                        alt="Burger 4"
-                        className="w-6 h-6 mr-2 rounded-full"
-                      />
-                      Burger 4
-                    </td>
-                    <td className="py-2">$11.23</td>
-                    <td className="py-2">235193138</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <div className="bg-white p-4 shadow-lg border">
-              <h2 className="text-lg font-bold mb-2">MONTHLY REVENUE</h2>
-              <select className="border p-2 mb-2">
-                <option>January</option>
-              </select>
-              <div>
-                <p>Week 1</p>
-                <div className="bg-gray-200 w-full h-4 overflow-hidden">
-                  <div className="bg-red-400 h-4 w-1/4 text-white text-center text-xs">
-                    25%
-                  </div>
-                </div>
-              </div>
-              <div>
-                <p>Week 2</p>
-                <div className="bg-gray-200 w-full h-4 overflow-hidden">
-                  <div className="bg-red-400 h-4 w-1/2 text-white text-center text-xs">
-                    50%
-                  </div>
-                </div>
-              </div>
-              <div>
-                <p>Week 3</p>
-                <div className="bg-gray-200 w-full h-4 overflow-hidden">
-                  <div className="bg-red-400 h-4 w-3/4 text-white text-center text-xs">
-                    75%
-                  </div>
-                </div>
-              </div>
-              <div>
-                <p>Week 4</p>
-                <div className="bg-gray-200 w-full h-4 overflow-hidden">
-                  <div className="bg-red-400 h-4 w-2/5 text-white text-center text-xs">
-                    40%
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+  {cards.map((card, index) => (
+    <div
+      key={index}
+      className="bg-white p-4 shadow-lg flex flex-col relative" // Removed `border` class
+    >
+      <h2 className="text-md font-semibold text-gray-600">{card.title}</h2>
+      <p className="text-2xl font-bold mt-2">{card.value}</p>
+      <div
+        className={`absolute top-3 right-3 text-sm px-2 py-1 font-bold ${
+          card.up ? "bg-black text-white" : "bg-red-200 text-red-600"
+        }`}
+      >
+        {card.up ? "↑" : "↓"} {card.change}
+      </div>
+      <div
+        className={`mt-2 h-12 w-full ${
+          card.up ? "bg-gray-300" : "bg-red-200"
+        }`}
+      ></div>
+    </div>
+  ))}
+</div>
+<div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+  <div className="bg-white p-4 shadow-lg"> {/* Removed `border` class */}
+    <div className="flex justify-between items-center mb-2">
+      <h2 className="text-lg font-bold">RECENT ORDERS REQUESTED</h2>
+      <button className="bg-red-500 text-white px-4 py-2">View All</button>
+    </div>
+    <table className="w-full text-left">
+      <thead>
+        <tr> {/* Removed `border-b` class */}
+          <th className="py-2">Food Item</th>
+          <th className="py-2">Price</th>
+          <th className="py-2">Product ID</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr> {/* Removed `border-b` class */}
+          <td className="py-2 flex items-center">
+            <img
+              src="/images/a.jpg"
+              alt="Burger 1"
+              className="w-6 h-6 mr-2 rounded-full"
+            />
+            Burger 1
+          </td>
+          <td className="py-2">$19.99</td>
+          <td className="py-2">67384917</td>
+        </tr>
+        <tr> {/* Removed `border-b` class */}
+          <td className="py-2 flex items-center">
+            <img
+              src="/images/b.jpg"
+              alt="Burger 2"
+              className="w-6 h-6 mr-2 rounded-full"
+            />
+            Burger 2
+          </td>
+          <td className="py-2">$14.59</td>
+          <td className="py-2">789393819</td>
+        </tr>
+        <tr> {/* Removed `border-b` class */}
+          <td className="py-2 flex items-center">
+            <img
+              src="/images/c.jpg"
+              alt="Burger 3"
+              className="w-6 h-6 mr-2 rounded-full"
+            />
+            Burger 3
+          </td>
+          <td className="py-2">$25.22</td>
+          <td className="py-2">137893137</td>
+        </tr>
+        <tr> {/* Removed `border-b` class */}
+          <td className="py-2 flex items-center">
+            <img
+              src="/images/d.png"
+              alt="Burger 4"
+              className="w-6 h-6 mr-2 rounded-full"
+            />
+            Burger 4
+          </td>
+          <td className="py-2">$11.23</td>
+          <td className="py-2">235193138</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div className="bg-white p-4 shadow-lg"> {/* Removed `border` class */}
+    <h2 className="text-lg font-bold mb-2">MONTHLY REVENUE</h2>
+    <select className="p-2 mb-2"> {/* Removed `border` class */}
+      <option>January</option>
+    </select>
+    <div>
+      <p>Week 1</p>
+      <div className="bg-gray-200 w-full h-4 overflow-hidden">
+        <div className="bg-red-400 h-4 w-1/4 text-white text-center text-xs">
+          25%
+        </div>
+      </div>
+    </div>
+    <div>
+      <p>Week 2</p>
+      <div className="bg-gray-200 w-full h-4 overflow-hidden">
+        <div className="bg-red-400 h-4 w-1/2 text-white text-center text-xs">
+          50%
+        </div>
+      </div>
+    </div>
+    <div>
+      <p>Week 3</p>
+      <div className="bg-gray-200 w-full h-4 overflow-hidden">
+        <div className="bg-red-400 h-4 w-3/4 text-white text-center text-xs">
+          75%
+        </div>
+      </div>
+    </div>
+    <div>
+      <p>Week 4</p>
+      <div className="bg-gray-200 w-full h-4 overflow-hidden">
+        <div className="bg-red-400 h-4 w-2/5 text-white text-center text-xs">
+          40%
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+         
           <div className="p-4 bg-white mt-6">
             <h2 className="text-lg font-bold mb-4">TRENDING ORDERS</h2>
             <hr className="w-full border-gray-300" />
