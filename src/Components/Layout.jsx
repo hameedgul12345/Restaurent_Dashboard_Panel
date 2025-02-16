@@ -30,6 +30,11 @@ function Layout({ children }) {
       title: "Menu",
       icon: <i className="ri-archive-fill"></i>,
     },
+    {
+      link: "/order",
+      title: "Order",
+      icon: <i className="ri-archive-fill"></i>,
+    },
   ];
   return (
     <>
