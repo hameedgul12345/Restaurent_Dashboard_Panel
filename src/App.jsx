@@ -8,12 +8,9 @@ import Home from './Components/Home'
 import Dashboard from './Components/Dashboard'
 import Menu from './Components/Menu'
 import Restuarent_List from './Components/Restuarent_List'
-
-
 import Invoice from './Components/Invoice'
-
 import Order from './Components/Order'
-
+import Customers from './Components/Customers'
 
 function App() {
   
@@ -28,6 +25,8 @@ function App() {
       <Route path='/order' element={<Order/>}/>
       <Route path='/restuarent_list' element={<Restuarent_List/>}/>
       <Route path='/invoice' element={<Invoice/>}/>
+      <Route path='/customers' element={<Customers/>}/>
+      
       
     </Routes>
     </BrowserRouter>

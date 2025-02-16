@@ -56,6 +56,13 @@ function Layout({ children }) {
       icon: <i class="ri-slideshow-fill"></i>
 
     },
+
+    {
+      link: "/customers",
+      title: "Customers",
+      icon: <i class="ri-customer-service-fill"></i>
+    },
+  
   ];
   return (
     <>
