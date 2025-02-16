@@ -29,12 +29,15 @@ function Layout({ children }) {
       link: "/menu",
       title: "Menu",
       icon: <i className="ri-archive-fill"></i>,
+
+
     },
     {
       link: "/order",
       title: "Order",
       icon: <i className="ri-archive-fill"></i>,
     },
+
   ];
   return (
     <>
@@ -145,6 +148,7 @@ function Layout({ children }) {
           marginLeft: leftMargin,
           transition: "0.75s ease",
           width: width,
+          background:'#EBEBEB'
         }}
         className="p-4"
       >
