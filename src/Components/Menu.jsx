@@ -1,9 +1,9 @@
 
-
 import React from "react";
 import Layout from "./Layout";
 
-const items = [
+function Menu() {
+  const items = [
     { img: "/images/pizza.jpg", title: "Pizza", price: "$15", orders: "150", revenue: "$1000" },
     { img: "/images/fries.jpg", title: "Fries", price: "$10", orders: "200", revenue: "$1200" },
     { img: "/images/sandwitch.jpg", title: "Sandwich", price: "$12", orders: "180", revenue: "$1100" },
@@ -11,10 +11,9 @@ const items = [
     { img: "/images/burger.jpg", title: "Burger", price: "$12", orders: "250", revenue: "$3000" },
     { img: "/images/dumplings.jpg", title: "Dumplings", price: "$14", orders: "180", revenue: "$2520" }
   ];
-
-function Menu() {
   return (
     <Layout>
+
          <div className="space-y-4">
             <h1 className="font-bold text-3xl mb-2">See Menu</h1>
       {/** Render items in two rows **/}
@@ -45,4 +44,7 @@ function Menu() {
   );
 }
 
-export default Menu;
+
+
+export default Menu
+

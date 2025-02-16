@@ -25,6 +25,12 @@ function Layout({ children }) {
       title: "Dashboard",
       icon: <i className="ri-dashboard-fill"></i>,
     },
+ 
+    {
+      link: "/menu",
+      title: "Menu",
+      icon: <i class="ri-slideshow-fill"></i>
+    },
     {
       link: "/menu",
       title: "Menu",
@@ -39,6 +45,16 @@ function Layout({ children }) {
       link: "/restuarent_list",
       title: "Restuarent List",
       icon: <i class="ri-list-ordered-2"></i>
+
+     
+    },
+  
+
+    {
+      link: "/invoice",
+      title: "Invoice",
+      icon: <i class="ri-slideshow-fill"></i>
+
     },
   ];
   return (
@@ -150,7 +166,8 @@ function Layout({ children }) {
           marginLeft: leftMargin,
           transition: "0.75s ease",
           width: width,
-          background:'#EBEBEB'
+          background:'#F0F0FA'
+
         }}
         className="p-4"
       >

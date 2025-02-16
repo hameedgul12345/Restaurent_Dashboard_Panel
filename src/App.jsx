@@ -6,9 +6,14 @@ import 'remixicon/fonts/remixicon.css'
 import {BrowserRouter,Routes,Route} from 'react-router-dom'
 import Home from './Components/Home'
 import Dashboard from './Components/Dashboard'
-import Order from './Components/Order'
 import Menu from './Components/Menu'
 import Restuarent_List from './Components/Restuarent_List'
+
+
+import Invoice from './Components/Invoice'
+
+import Order from './Components/Order'
+
 
 function App() {
   
@@ -22,6 +27,7 @@ function App() {
       <Route path='/menu' element={<Menu/>}/>
       <Route path='/order' element={<Order/>}/>
       <Route path='/restuarent_list' element={<Restuarent_List/>}/>
+      <Route path='/invoice' element={<Invoice/>}/>
       
     </Routes>
     </BrowserRouter>
